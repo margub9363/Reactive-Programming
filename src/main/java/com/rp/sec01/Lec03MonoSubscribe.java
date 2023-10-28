@@ -6,11 +6,13 @@ public class Lec03MonoSubscribe {
     public static void main(String[] args) {
 
 //        publisher
-        Mono<String> mono = Mono.just("ball");
+        Mono<Integer> mono = Mono.just("ball")
+                .map(String::length)
+                        .map(length -> length / 0);
 
 //        1
 //        here we are using a subscribe method where in along with subscribe it will not perform any action
-        mono.subscribe();
+//        mono.subscribe();
 
 //        2
         mono.subscribe( item -> System.out.println(item),
