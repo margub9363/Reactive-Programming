@@ -12,6 +12,7 @@ public class L04FluxFromStream {
         Stream<Integer> stream = list.stream();
 //        stream.forEach(System.out::println);
 //        stream.forEach(System.out::println);  you cannot use the same stream again
+        /*
         Flux<Integer> integerFlux = Flux.fromStream(stream);
         integerFlux
                 .subscribe(
@@ -19,12 +20,25 @@ public class L04FluxFromStream {
                         Util.onError(),
                         Util.onComplete()
                 );
+        integerFlux // here we will get an error because we are trying to have multiple subscribers for the same stream
+                .subscribe(
+                        Util.onNext(),
+                        Util.onError(),
+                        Util.onComplete()
+                );
+         */
+        Flux<Integer> integerFlux = Flux.fromStream(() -> list.stream());
         integerFlux
                 .subscribe(
                         Util.onNext(),
                         Util.onError(),
                         Util.onComplete()
                 );
-
+        integerFlux // here we will not get any error because we are trying to create new stream
+                .subscribe(
+                        Util.onNext(),
+                        Util.onError(),
+                        Util.onComplete()
+                );
     }
 }
