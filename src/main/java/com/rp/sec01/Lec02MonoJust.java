@@ -8,6 +8,7 @@ public class Lec02MonoJust {
         Mono<Integer> mono = Mono.just(1);
         System.out.println(mono);
 
+//        here we are using a subscribe method where in along with subscribe it will perform an action
         mono.subscribe( i -> System.out.println("Received : " + i));
     }
 }
