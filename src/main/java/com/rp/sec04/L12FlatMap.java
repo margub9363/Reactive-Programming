@@ -9,7 +9,8 @@ public class L12FlatMap {
     public static void main(String[] args) {
 
         UserService.getUsers()
-                .flatMap(user -> OrderService.getOrders(user.getUserId()))
+//                .flatMap(user -> OrderService.getOrders(user.getUserId()))
+                .concatMap(user -> OrderService.getOrders(user.getUserId()))
                 .subscribe(Util.subscriber());
 
         Util.sleepSeconds(10);
