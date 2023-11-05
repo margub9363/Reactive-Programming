@@ -7,10 +7,10 @@ import java.util.concurrent.Flow;
 
 public class DefaultSubscriber implements Subscriber<Object> {
 
-    private String name ="" + "-";
+    private String name;
 
     public DefaultSubscriber(String name) {
-        this.name = name;
+        this.name = name + " - ";
     }
 
     public DefaultSubscriber() {
