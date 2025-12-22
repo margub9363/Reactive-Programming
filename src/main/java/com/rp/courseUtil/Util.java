@@ -2,6 +2,7 @@ package src.main.java.com.rp.courseUtil;
 
 import com.github.javafaker.Faker;
 import org.reactivestreams.Subscriber;
+import reactor.core.publisher.Mono;
 
 import java.util.concurrent.Flow;
 import java.util.function.Consumer;
@@ -44,4 +45,10 @@ public class Util {
     public static Subscriber<Object> subscriber(String name) {
         return new DefaultSubscriber(name);
     }
+
+//    public static void main(String[] args) {
+//        Mono<Integer> mono = Mono.just(1);
+//        mono.subscribe(subscriber());
+//        mono.subscribe(subscriber("aaaa"));
+//    }
 }
