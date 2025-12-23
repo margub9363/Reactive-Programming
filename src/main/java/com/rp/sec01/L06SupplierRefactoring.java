@@ -14,7 +14,7 @@ public class L06SupplierRefactoring {
     private static Mono<String> getName() {
         System.out.println("Entered Get Name method");
         return Mono.fromSupplier( () -> {
-            System.out.println("Generating Name...");
+            System.out.println("Generating Name..."); // this is not a time consuming operation so it dosent need subscription
             Util.sleepSeconds(2);
             return Util.faker().name().fullName();
         }).map(String::toUpperCase);
