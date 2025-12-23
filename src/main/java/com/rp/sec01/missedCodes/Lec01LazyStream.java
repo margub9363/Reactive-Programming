@@ -1,4 +1,4 @@
-package com.rp.sec02.missedCodes;
+package com.rp.sec01.missedCodes;
 
 import lombok.extern.slf4j.Slf4j;
 

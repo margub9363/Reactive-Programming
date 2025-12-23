@@ -1,25 +1,27 @@
 package src.main.java.com.rp.courseUtil;
 
 import com.github.javafaker.Faker;
+import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Subscriber;
 import reactor.core.publisher.Mono;
 
 import java.util.concurrent.Flow;
 import java.util.function.Consumer;
 
+@Slf4j
 public class Util {
 
     public static final Faker FAKER= Faker.instance();
     public static Consumer<Object> onNext(){
-        return o -> System.out.println("Received :" + o);
+        return o -> log.info("Received :" + o);
     }
 
     public static Consumer<Object> onError(){
-        return e -> System.out.println("ERROR :" + e);
+        return e -> log.info("ERROR :" + e);
     }
 
     public static Runnable onComplete(){
-        return () -> System.out.println("Completed");
+        return () -> log.info("Completed");
     }
 
     public static Faker faker() {
@@ -39,11 +41,11 @@ public class Util {
     }
 
     public static Subscriber<Object> subscriber() {
-        return new DefaultSubscriber();
+        return new src.main.java.com.rp.courseUtil.DefaultSubscriber("");
     }
 
     public static Subscriber<Object> subscriber(String name) {
-        return new DefaultSubscriber(name);
+        return new src.main.java.com.rp.courseUtil.DefaultSubscriber(name);
     }
 
 //    public static void main(String[] args) {

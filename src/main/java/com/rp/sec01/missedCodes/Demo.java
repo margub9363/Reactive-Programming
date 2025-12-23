@@ -1,7 +1,7 @@
-package com.rp.sec02.missedCodes;
+package com.rp.sec01.missedCodes;
 
-import com.rp.sec02.missedCodes.publisher.PublisherImpl;
-import com.rp.sec02.missedCodes.subscriber.SubscriberImpl;
+import com.rp.sec01.missedCodes.publisher.PublisherImpl;
+import com.rp.sec01.missedCodes.subscriber.SubscriberImpl;
 
 public class Demo {
     public static void main(String[] args) throws InterruptedException {

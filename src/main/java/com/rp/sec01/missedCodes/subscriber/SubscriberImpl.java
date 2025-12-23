@@ -1,4 +1,4 @@
-package com.rp.sec02.missedCodes.subscriber;
+package com.rp.sec01.missedCodes.subscriber;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Subscriber;
