@@ -13,7 +13,7 @@ public class L05FluxRange {
                         Util.onNext()
                 );*/
         Flux.range(1,5)
-//                .log()
+                .log()
                 .map( i -> Util.faker().name().fullName())
                 .subscribe(
                 Util.onNext()
