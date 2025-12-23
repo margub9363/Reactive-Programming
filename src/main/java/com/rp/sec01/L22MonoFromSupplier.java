@@ -10,13 +10,11 @@ public class L22MonoFromSupplier {
     public static void main(String[] args) {
 
         var list = List.of(1,2,3);
-        Mono.just(sum(list));
+//        Mono.just(sum(list));
 
-
-//        .subscribe(src.main.java.com.rp.courseUtil.Util.subscriber());
-
-//        Mono.fromSupplier( () -> sum(list))
-//                .subscribe(src.main.java.com.rp.courseUtil.Util.subscriber());
+//        Mono.fromSupplier( () -> sum(list));
+        Mono.fromSupplier( () -> sum(list))
+                .subscribe(src.main.java.com.rp.courseUtil.Util.subscriber());
     }
 
     private static int sum(List<Integer> list) {
