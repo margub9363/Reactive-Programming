@@ -20,8 +20,8 @@ public class Lec02HotPublisher {
 
     public static void main(String[] args) {
 
-
-//        var movieFlux = movieStream().share();
+//        var movieFlux = movieStream();
+        var movieFlux = movieStream().share();
 
         src.main.java.com.rp.courseUtil.Util.sleepSeconds(2);
 
