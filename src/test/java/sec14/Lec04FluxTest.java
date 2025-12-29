@@ -44,5 +44,13 @@ public class Lec04FluxTest {
                 .verify();
     }
 
+    @Test
+    public void rampTest4() {
+        StepVerifier.create(getRandomItems())
+                .thenConsumeWhile( i -> i> 0 && i < 101)
+                .expectComplete()
+                .verify();
+    }
+
 
 }
